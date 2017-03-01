@@ -40,6 +40,13 @@ module.exports.addUser = function(newUser, callback){
       if(err) throw err;
       newUser.password = hash;
       newUser.save(callback);
-    })
-  })
+    });
+  });
+}
+
+module.exports.comparePassword = function(candidatePassword, user, callback){
+  bcrypt.compare(candidatePassword, hash, (err, isMatch) => {
+    if(err) throw err;
+    callback(null, isMatch);
+  });
 }
