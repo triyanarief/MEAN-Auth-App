@@ -13,9 +13,11 @@
           <ul class="nav navbar-nav navbar-left">
             <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"  class="active"><a [routerLink]="['/']">Home</a></li>
           </ul>
+          
           <ul class="nav navbar-nav navbar-right ">
               <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" class="active"><a [routerLink]="['/login']">Login</a></li>
               <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" class="active"><a [routerLink]="['/register']">Register</a></li>
+              <li><a (click)="onLogoutClick()" href="#">Logout</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
