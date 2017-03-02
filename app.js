@@ -57,11 +57,11 @@ app.get('*', (req, res) => {
 });
 
 // Start Server
-// app.listen(port, () => {
-//   console.log('Server started on port '+port);
-// });
-
-app.listen(process.env.PORT, process.env.IP, function() {
-  var appConsoleMsg = 'Mean-auth server has started: ';
-  appConsoleMsg += process.env.IP + ':' + process.env.PORT;
+app.listen(port, () => {
+  console.log('Server started on port '+port);
 });
+
+// app.listen(process.env.PORT, process.env.IP, function() {
+//   var appConsoleMsg = 'Mean-auth server has started: ';
+//   appConsoleMsg += process.env.IP + ':' + process.env.PORT;
+// });
