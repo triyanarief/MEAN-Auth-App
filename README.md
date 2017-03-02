@@ -1,5 +1,5 @@
 # MEAN-Auth-App
-MEAN Stack Front To Back
+MEAN Stack Front To Back and auth with json web tokens
 
 # What's inside?
 - REST API-Node.js/Express
@@ -12,3 +12,16 @@ MEAN Stack Front To Back
 - Auth Guard
 - Angular Flash Message Module
 - Deploy to Heroku
+
+### Installation
+
+Install the dependencies
+
+```sh
+$ npm install
+```
+Run app
+
+```sh
+$ npm start
+```
