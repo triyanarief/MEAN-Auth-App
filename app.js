@@ -9,7 +9,9 @@ const mongoose = require('mongoose');
 const config = require('./config/database');
 
 // Connect To Database
-mongoose.connect('mongodb://triyanarief:detroit28arief@ds113580.mlab.com:13580/meanauth');
+// mongoose.connect('mongodb://triyanarief:detroit28arief@ds113580.mlab.com:13580/meanauth');
+
+mongoose.connect(config.database);
 
 // On Connection
 mongoose.connection.on('connected', () => {
