@@ -1,5 +1,6 @@
 module.exports = {
-  //database: 'mongodb://brad:brad@ds121190.mlab.com:21190/meanauthapp',   //prod
-  database: 'mongodb://localhost:27017/meanauth',    //dev
+  //prod
+  database: 'mongodb://triyanarief:detroit28arief@ds113580.mlab.com:13580/meanauth',
+  // database: 'mongodb://localhost:27017/meanauth',    //dev
   secret: 'yoursecret'
 }
