@@ -1,5 +1,3 @@
-"use strict"
-
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -9,8 +7,6 @@ const mongoose = require('mongoose');
 const config = require('./config/database');
 
 // Connect To Database
-// mongoose.connect('mongodb://triyanarief:detroit28arief@ds113580.mlab.com:13580/meanauth');
-
 mongoose.connect(config.database);
 
 // On Connection
@@ -60,8 +56,3 @@ app.get('*', (req, res) => {
 app.listen(port, () => {
   console.log('Server started on port '+port);
 });
-
-// app.listen(process.env.PORT, process.env.IP, function() {
-//   var appConsoleMsg = 'Mean-auth server has started: ';
-//   appConsoleMsg += process.env.IP + ':' + process.env.PORT;
-// });
