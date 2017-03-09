@@ -37,7 +37,7 @@ var ValidateService = (function () {
     ], ValidateService);
     return ValidateService;
 }());
-//# sourceMappingURL=/Users/triyanarief/Desktop/MEAN-Auth-App/angular-src/src/validate.service.js.map
+//# sourceMappingURL=/Users/triyanarief/Desktop/move 832017/MEAN-Auth-App/angular-src/src/validate.service.js.map
 
 /***/ }),
 
@@ -72,7 +72,7 @@ if (__WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment *
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["enableProdMode"])();
 }
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_3__app_app_module__["a" /* AppModule */]);
-//# sourceMappingURL=/Users/triyanarief/Desktop/MEAN-Auth-App/angular-src/src/main.js.map
+//# sourceMappingURL=/Users/triyanarief/Desktop/move 832017/MEAN-Auth-App/angular-src/src/main.js.map
 
 /***/ }),
 
@@ -106,7 +106,7 @@ var AppComponent = (function () {
     ], AppComponent);
     return AppComponent;
 }());
-//# sourceMappingURL=/Users/triyanarief/Desktop/MEAN-Auth-App/angular-src/src/app.component.js.map
+//# sourceMappingURL=/Users/triyanarief/Desktop/move 832017/MEAN-Auth-App/angular-src/src/app.component.js.map
 
 /***/ }),
 
@@ -192,7 +192,7 @@ var AppModule = (function () {
     ], AppModule);
     return AppModule;
 }());
-//# sourceMappingURL=/Users/triyanarief/Desktop/MEAN-Auth-App/angular-src/src/app.module.js.map
+//# sourceMappingURL=/Users/triyanarief/Desktop/move 832017/MEAN-Auth-App/angular-src/src/app.module.js.map
 
 /***/ }),
 
@@ -227,7 +227,7 @@ var DashboardComponent = (function () {
     ], DashboardComponent);
     return DashboardComponent;
 }());
-//# sourceMappingURL=/Users/triyanarief/Desktop/MEAN-Auth-App/angular-src/src/dashboard.component.js.map
+//# sourceMappingURL=/Users/triyanarief/Desktop/move 832017/MEAN-Auth-App/angular-src/src/dashboard.component.js.map
 
 /***/ }),
 
@@ -262,7 +262,7 @@ var HomeComponent = (function () {
     ], HomeComponent);
     return HomeComponent;
 }());
-//# sourceMappingURL=/Users/triyanarief/Desktop/MEAN-Auth-App/angular-src/src/home.component.js.map
+//# sourceMappingURL=/Users/triyanarief/Desktop/move 832017/MEAN-Auth-App/angular-src/src/home.component.js.map
 
 /***/ }),
 
@@ -330,7 +330,7 @@ var LoginComponent = (function () {
     return LoginComponent;
     var _a, _b, _c;
 }());
-//# sourceMappingURL=/Users/triyanarief/Desktop/MEAN-Auth-App/angular-src/src/login.component.js.map
+//# sourceMappingURL=/Users/triyanarief/Desktop/move 832017/MEAN-Auth-App/angular-src/src/login.component.js.map
 
 /***/ }),
 
@@ -385,7 +385,7 @@ var NavbarComponent = (function () {
     return NavbarComponent;
     var _a, _b, _c;
 }());
-//# sourceMappingURL=/Users/triyanarief/Desktop/MEAN-Auth-App/angular-src/src/navbar.component.js.map
+//# sourceMappingURL=/Users/triyanarief/Desktop/move 832017/MEAN-Auth-App/angular-src/src/navbar.component.js.map
 
 /***/ }),
 
@@ -434,7 +434,7 @@ var ProfileComponent = (function () {
     return ProfileComponent;
     var _a, _b;
 }());
-//# sourceMappingURL=/Users/triyanarief/Desktop/MEAN-Auth-App/angular-src/src/profile.component.js.map
+//# sourceMappingURL=/Users/triyanarief/Desktop/move 832017/MEAN-Auth-App/angular-src/src/profile.component.js.map
 
 /***/ }),
 
@@ -512,7 +512,7 @@ var RegisterComponent = (function () {
     return RegisterComponent;
     var _a, _b, _c, _d;
 }());
-//# sourceMappingURL=/Users/triyanarief/Desktop/MEAN-Auth-App/angular-src/src/register.component.js.map
+//# sourceMappingURL=/Users/triyanarief/Desktop/move 832017/MEAN-Auth-App/angular-src/src/register.component.js.map
 
 /***/ }),
 
@@ -557,7 +557,7 @@ var AuthGuard = (function () {
     return AuthGuard;
     var _a, _b;
 }());
-//# sourceMappingURL=/Users/triyanarief/Desktop/MEAN-Auth-App/angular-src/src/auth.guard.js.map
+//# sourceMappingURL=/Users/triyanarief/Desktop/move 832017/MEAN-Auth-App/angular-src/src/auth.guard.js.map
 
 /***/ }),
 
@@ -573,7 +573,7 @@ var AuthGuard = (function () {
 var environment = {
     production: false
 };
-//# sourceMappingURL=/Users/triyanarief/Desktop/MEAN-Auth-App/angular-src/src/environment.js.map
+//# sourceMappingURL=/Users/triyanarief/Desktop/move 832017/MEAN-Auth-App/angular-src/src/environment.js.map
 
 /***/ }),
 
@@ -710,17 +710,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var AuthService = (function () {
     function AuthService(http) {
         this.http = http;
+        this.isDev = true; // Change to false before deployment
     }
     AuthService.prototype.registerUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3000/users/register', user, { headers: headers })
+        var ep = this.prepEndpoint('users/register');
+        return this.http.post(ep, user, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.authenticateUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3000/users/authenticate', user, { headers: headers })
+        var ep = this.prepEndpoint('users/authenticate');
+        return this.http.post(ep, user, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.getProfile = function () {
@@ -728,7 +731,8 @@ var AuthService = (function () {
         this.loadToken();
         headers.append('Authorization', this.authToken);
         headers.append('Content-Type', 'application/json');
-        return this.http.get('http://localhost:3000/users/profile', { headers: headers })
+        var ep = this.prepEndpoint('users/profile');
+        return this.http.get(ep, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.storeUserData = function (token, user) {
@@ -749,6 +753,14 @@ var AuthService = (function () {
         this.user = null;
         localStorage.clear();
     };
+    AuthService.prototype.prepEndpoint = function (ep) {
+        if (this.isDev) {
+            return ep;
+        }
+        else {
+            return 'http://localhost:8080/' + ep;
+        }
+    };
     AuthService = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === 'function' && _a) || Object])
@@ -756,7 +768,7 @@ var AuthService = (function () {
     return AuthService;
     var _a;
 }());
-//# sourceMappingURL=/Users/triyanarief/Desktop/MEAN-Auth-App/angular-src/src/auth.service.js.map
+//# sourceMappingURL=/Users/triyanarief/Desktop/move 832017/MEAN-Auth-App/angular-src/src/auth.service.js.map
 
 /***/ })
 
